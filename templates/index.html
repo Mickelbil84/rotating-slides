@@ -1,42 +1,43 @@
 {% extends 'base.html' %}
 
 {% block 'body' %}
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col">
-                <h1>שאלה 1</h1>
-            </div>
-            <div class="col"></div>
-            <div class="col" style="margin: auto; text-align: left;">
-                <h2>נערך לאחרונה: 10:53</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p class="fs-4">שקף הבא בעוד: 120 שניות</p>
-            </div>
-            <div class="col"></div>
-            <div class="col"></div>
 
-        </div>
-        <div class="row">
-            <div class="col fs-3">
-                <ul>
-                    <li>לורם איפסום דולור סיט אמט</li>
-                    <li>לורם איפסום דולור סיט אמט</li>
-                    <li>לורם איפסום דולור סיט אמט</li>
-                    <li>לורם איפסום דולור סיט אמט</li>
-                    <li>לורם איפסום דולור סיט אמט</li>
-                </ul>
+    {% for slide in slides %}
+        <div class="container slide mt-5" slide-index="{{ slide.index }}" slide-duration="{{ slide.duration }}">
+            <div class="row">
+                <div class="col">
+                    <h1>{{ slide.title }}</h1>
+                </div>
+                <div class="col"></div>
+                <div class="col" style="margin: auto; text-align: left;">
+                    <h2>{{ slide.last_updated | safe }}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="fs-4">שקף הבא בעוד: <span id="next-slide-cntr"></span> שניות</p>
+                </div>
+                <div class="col"></div>
+                <div class="col"></div>
+
+            </div>
+            <div class="row">
+                <div class="col fs-3">
+                    {{ slide.content | safe }}
+                </div>
             </div>
         </div>
-    </div>
+    {% endfor %}
+
+    
 
     <span style="position: fixed; bottom: 10px; left: 10px;">
         <a href="/admin" target="_blank">Admin</a>
         &nbsp;
-        <a href="#" onclick="alert('next')">Next</a>
+        <a href="#" id="btn-next">Next</a>
         &nbsp;
-        <a href="#" onclick="alert('prev')">Prev</a>
+        <a href="#" id="btn-prev">Prev</a>
     </span>
+
+    <script src="/static/js/rotating_slides.js"></script>
 {% endblock %}
