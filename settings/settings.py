@@ -128,7 +128,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-TINYMCE_JS_URL = 'http://127.0.0.1:8000/static/js/tinymce/tinymce.min.js'
+TINYMCE_JS_URL = 'http://127.0.0.1:8000/static/cdn/tinymce-7.6.1/js/tinymce/tinymce.min.js'
 TINYMCE_COMPRESSOR = False
 
 TINYMCE_DEFAULT_CONFIG = {
@@ -137,8 +137,8 @@ TINYMCE_DEFAULT_CONFIG = {
     "resize": "false",
     "menubar": "file edit view insert format tools table help",
     "toolbar":
-        "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | ltr rtl | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment code typography",
+        "undo redo | bold italic underline strikethrough | fontsizeselect fontsize | alignleft aligncenter alignright alignjustify | ltr rtl | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment code typography",
     "plugins":
-        "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime media table powerpaste advcode help wordcount spellchecker typography directionality",
+        "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime media table powerpaste advcode help wordcount spellchecker directionality",
     "selector": "textarea",
 };
