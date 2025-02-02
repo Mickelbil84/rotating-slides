@@ -26,6 +26,10 @@ var slideMaster = {
     nextSlide: function() {
         this.currentSlide = (this.currentSlide + 1) % this.slides.length;
         this.enableSlide(this.currentSlide);
+
+        if (this.currentSlide === 0) { // refresh
+            location.reload();
+        }
     },
     previousSlide: function() {
         this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
